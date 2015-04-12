@@ -30,5 +30,6 @@ function checkPassword($account,$password)
 
 function passwordHash($password)
 {
-	return crypt($password."blabla Login",substr($password, 0, 2));
+	$password = $password."blabla Login";
+	return crypt($password,substr($password, 0, 5));
 }
