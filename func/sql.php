@@ -2,6 +2,7 @@
 if(!defined("IN_SYSTEM"))
 	die("Access Denied");
 
+require_once("../config/config.php");
 function createPDO()
 {
 	global $config;
