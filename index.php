@@ -2,9 +2,12 @@
 require_once("system.php");
 if(isset($_POST["account"]) && isset($_POST["password"]))
 {
-	$db = createPDO();
-	$E["msg"] = "succ";
-	require("template/main.php");
+	if(checkPassword($_POST["account"],$_POST["password"])){
+		echo "login succeed";
+	}else{
+		$E["msg"] = "login failed";
+		require("template/main.php");
+	}
 }
 else
 {

@@ -2,7 +2,6 @@
 if(!defined("IN_SYSTEM"))
 	die("Access Denied");
 
-require_once("../config/config.php");
 function createPDO()
 {
 	global $config;
@@ -12,4 +11,24 @@ function createPDO()
 	}catch(PDOException $e){
 		exit("Error establishing DB connection: <br>" . $e->getMessage());
 	}
+}
+
+function checkPassword($account,$password)
+{
+	$password = passwordHash($password);
+	$db = createPDO();
+	try{
+		$dbc = $db->prepare("SELECT * FROM `account` WHERE `account`=? and `password`=?");
+		$dbc->bindValue(1, $account, PDO::PARAM_STR);
+		$dbc->bindValue(2, $password, PDO::PARAM_STR);
+		$dbc->execute();
+		return $dbc->rowCount() === 1;
+	}catch(PDOException $e){
+		die($e->getMessage() . "SQL ERROR");
+	}
+}
+
+function passwordHash($password)
+{
+	return crypt($password."blabla Login",substr($password, 0, 2));
 }
