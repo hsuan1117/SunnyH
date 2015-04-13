@@ -13,23 +13,18 @@ function createPDO()
 	}
 }
 
-function checkPassword($account,$password)
+function checkPassword($account,$password) //return true: succeed, 0: wrong pass, -1: no such acct
 {
-	$password = passwordHash($password);
 	$db = createPDO();
 	try{
-		$dbc = $db->prepare("SELECT * FROM `account` WHERE `account`=? and `password`=?");
+		$dbc = $db->prepare("SELECT * FROM `account` WHERE `account`=?");
 		$dbc->bindValue(1, $account, PDO::PARAM_STR);
-		$dbc->bindValue(2, $password, PDO::PARAM_STR);
 		$dbc->execute();
-		return $dbc->rowCount() === 1;
+		if($dbc->rowCount()<1)
+			return false;
+		$real_pass = $dbc->fetchAll()[0]["password"];
+		return crypt($password,$real_pass) === $real_pass;
 	}catch(PDOException $e){
-		die($e->getMessage() . "SQL ERROR");
+		die("SQL ERROR: " . $e->getMessage());
 	}
-}
-
-function passwordHash($password)
-{
-	$password = $password."blabla Login";
-	return crypt($password,substr($password, 0, 5));
 }
