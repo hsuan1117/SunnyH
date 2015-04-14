@@ -6,10 +6,19 @@ if(!$isCLI)
 }
 
 require_once("../system.php");
-$sql = file_get_contents("./install.sql");
-$db = createPDO();
+
+$dbconf = $config["DB"];
+$tablepre = $dbconf["tablepre"];
+$charset = $dbconf["charset"];
+
+ob_start();
+require("install.sql");
+$sql = ob_get_contents();
+ob_end_clean();
+
+$db = PDO_prepare($sql);
 try{
-	$db->exec($sql);
+	$db->execute();
 	echo "success\n";
 }catch(PDOException $e){
 	echo "SQL ERROR \n";
