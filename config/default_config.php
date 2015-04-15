@@ -17,8 +17,8 @@ $config["session"]["expire"] = 30; //unit: days; If keep_login==false, the expir
 $config["session"]["cookie_path"] = "/";
 $config["session"]["cookie_domain"] = ".tfcis.org";
 
+# site
+$config["site"]["available_domain"] = ["/.{0,}tfcis.org$/"];
 
-if(file_exists('config.php'))
-{
-    require_once('config.php');
-}
+
+@include_once('config.php');

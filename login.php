@@ -29,7 +29,10 @@ if(isset($_POST["account"]) && isset($_POST["password"])){
 		require("template/login.php");
 	}
 }else if(($uid=checklogin())!==false){
-	header('refresh: 0;url=index.php');
+	if(isset($_GET["continue"])	&& checkURL($_GET["continue"])){
+		header("Location:".$_GET["continue"]."?cookie=".$_COOKIE["login"]);
+	}else
+		header("Location:index.php");
 }else{
 	require("template/login.php");
 }

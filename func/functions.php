@@ -2,7 +2,7 @@
 //return login userid
 function checklogin($cookie=null){
 	if(is_null($cookie))
-		$cookie = $_COOKIE["login"];
+		$cookie = @$_COOKIE["login"];
 	if(!isset($cookie))
 		return false;
 	//clear expired db data
@@ -24,4 +24,14 @@ function checklogin($cookie=null){
 	}catch(PDOException $e){
 		die("SQL ERROR: " . $e->getMessage());
 	}
+}
+
+function checkURL($url){
+	global $config;
+	$domain = parse_url($url,PHP_URL_HOST);
+	foreach ($config["site"]["available_domain"] as $d) {
+		if(preg_match($d,$domain)===1)
+			return true;
+	}
+	return false;
 }
