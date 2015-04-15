@@ -28,21 +28,8 @@ if(isset($_POST["account"]) && isset($_POST["password"])){
 		$E["msg"] = "login failed";
 		require("template/login.php");
 	}
-}else if(isset($_COOKIE["login"])){
-	//clear expired db data
-	$db = PDO_prepare("DELETE FROM `table:session` WHERE `expire`<CURDATE()");
-	$db->execute();
-	//check cookie
-	$db = PDO_prepare("SELECT `id` FROM `table:session` WHERE `cookie`=:cookie");
-	$db->bindValue("cookie", $_COOKIE["login"], PDO::PARAM_STR);
-	$db->execute();
-	if($db->rowCount()>0){
-		$uid = $db->fetchAll()[0]["id"];
-		echo $uid;
-	}else{
-		setcookie("login",null,-1,$config["session"]["cookie_path"],$config["session"]["domain"],false,true); //delete cookie
-		header('refresh: 0;url=');
-	}
+}else if(($uid=checklogin())!==false){
+	header('refresh: 0;url=index.php');
 }else{
 	require("template/login.php");
 }
