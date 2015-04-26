@@ -40,11 +40,8 @@ if(isset($_POST["account"])){
 				die("SQL ERROR: " . $e->getMessage());
 			}
 
-			require("template/header.php");
-			?>
-			<center>Signup succeed. Please login.</center>
-			<?php
-			require("template/footer.php");
+			$E["msg"] = "Signup succeed. Please login.";
+			require("template/blank.php");
 			header('refresh: 3;url=login.php');
 		}else {
 			if($checkaccount !== -1){

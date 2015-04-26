@@ -3,11 +3,8 @@ require_once("system.php");
 if(isset($_POST["account"]) && isset($_POST["password"])){
 	$user = checkPassword($_POST["account"],$_POST["password"]);
 	if($user !== -1 && $user !== -2){
-		require("template/header.php");
-		?>
-		<center>Login succeed.</center>
-		<?php
-		require("template/footer.php");
+		$E["msg"] = "Login succeed.";
+		require("template/blank.php");
 
 		//set cookie
 		$hash = randomHash(32);
