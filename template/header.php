@@ -7,10 +7,10 @@ if(!defined("IN_SYSTEM"))
 <html>
 
 <head>
+	<meta charset="UTF-8">
 	<title>TFcis Login Integration System</title>
 </head>
 <body topmargin="0" leftmargin="0">
-	<?=$E["msg"]?>
 	<table width="100%" border="0" cellspacing="0" cellpadding="0">
 	<tr>
 		<td width="100%" height="100" align="center" valign="middle" bgcolor="#F0F0F0" style="font-weight: bold;">
@@ -31,19 +31,16 @@ if(!defined("IN_SYSTEM"))
 			</div>
 		</td>
 		<td height="25" valign="middle" bgcolor="#0000FF" style="text-align: right; color: #FFF;">
-			<?php 
-			if($login==false){
-			?>
-			<a href="./" target="_parent" style="color:#FFF">登入/註冊</a>
-			<?php
-			}
-			else{echo "目前登入: ".$login["user"]."(".het($login["name"]).")";
-			?>
-			<a href="./" target="_parent" style="color:#FFF">登出</a>
-			<?php
-			}
-			?>
+			<?php if($E["login"]===true){ ?>
+				<?=$E["nick"]?>(<?=$E["acct"]?>)
+				<a href="logout.php?continue=index.php" style="color:#FFF">logout</a>
+			<?php }else{ ?>
+				<a href="login.php" style="color:#FFF">login</a>
+			<?php } ?>
 			&nbsp;&nbsp;
 		</td>
 	</tr>
 	</table>
+	<center>
+		<?=$E["msg"]?>
+	</center>

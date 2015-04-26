@@ -5,7 +5,7 @@ if(!defined("IN_SYSTEM"))
 
 <?php require("header.php"); ?>
 
-<h1>TFcis Login Integration System</h1>
+<center>
 <?php if($E["login"]===true){ ?>
 	your nickname: <?=$E["nick"]?><br>
 	your account: <?=$E["acct"]?>
@@ -13,6 +13,6 @@ if(!defined("IN_SYSTEM"))
 <?php }else{ ?>
 	<a href="login.php">login</a>
 <?php } ?>
-
+</center>
 
 <?php require("footer.php"); ?>
