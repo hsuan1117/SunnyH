@@ -26,12 +26,12 @@ if(!defined("IN_SYSTEM"))
 	<tr>
 		<td height="25" valign="middle" bgcolor="#0000FF" style="color: #FFF">
 			<div style="float:left;">
-			&nbsp;&nbsp;&nbsp;&nbsp;
-			<a href="./" target="_parent" style="color:#FFF" >Home</a>
+			&nbsp;&nbsp;&nbsp;&nbsp;<a href="./" style="color:#FFF" >Home</a>
+			&nbsp;&nbsp;&nbsp;&nbsp;<a href="./setting.php" style="color:#FFF" >Setting</a>
 			</div>
 		</td>
 		<td height="25" valign="middle" bgcolor="#0000FF" style="text-align: right; color: #FFF;">
-			<?php if(isset($E["login"]) && $E["login"]===true){ ?>
+			<?php if($E["login"]===true){ ?>
 				<?=$E["nick"]?>(<?=$E["acct"]?>)
 				<a href="logout.php?continue=index.php" style="color:#FFF">logout</a>
 			<?php }else{ ?>
