@@ -48,7 +48,7 @@ if(isset($_POST["account"])){
 				$E["msg"].="Account is exist. ";
 				$E["POST"]["account"]="";
 			}
-			if($checkaccount !== -1){
+			if($checkemail !== -1){
 				$E["msg"].="Email is exist. ";
 				$E["POST"]["email"]="";
 			}
