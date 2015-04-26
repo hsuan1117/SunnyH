@@ -15,10 +15,10 @@ $config["DB"]["tablepre"] = "";
 $config["session"]["keep_login"] = true; //If set to false, the cookie expire at the end of the session.
 $config["session"]["expire"] = 30; //unit: days; If keep_login==false, the expire time in db is still set to it.
 $config["session"]["cookie_path"] = "/";
-$config["session"]["cookie_domain"] = ".tfcis.org";
+$config["session"]["cookie_domain"] = ".tfcis.org"; //Hint: If you want to set cookie on localhost, use false or empty string.
 
 # site
-$config["site"]["available_domain"] = ["/.{0,}tfcis.org$/"];
+$config["site"]["available_domain"] = ["/.*tfcis.org$/"];
 
 
 @include_once('config.php');
