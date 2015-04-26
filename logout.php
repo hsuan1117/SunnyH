@@ -15,7 +15,8 @@ if(isset($_COOKIE["login"])){
 	setcookie("login",null,-1,$config["session"]["cookie_path"],$config["session"]["domain"],false,true);
 }
 
-if(isset($_GET["continue"]))
+if(isset($_GET["continue"]) && checkURL($_GET["continue"])){
 	header("refresh: 0;url=".$_GET["continue"]);
-else
+}else {
 	header("refresh: 0;url=index.php");
+}
