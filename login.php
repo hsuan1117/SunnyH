@@ -12,7 +12,7 @@ if(isset($_POST["account"]) && isset($_POST["password"])){
 			$expire = 0;
 		else
 			$expire = time()+60*60*24*$config["session"]["expire"];
-		setcookie("login",$hash,$expire,$config["session"]["cookie_path"],$config["session"]["domain"],false,true);
+		setcookie("login",$hash,$expire,$config["session"]["cookie_path"],$config["session"]["cookie_domain"],false,true);
 		
 		//set DB
 		$db = PDO_prepare("INSERT INTO `table:session` (`id`, `expire`, `cookie`) VALUES (:id, DATE_ADD(CURDATE(),INTERVAL :expire DAY), :cookie)");
