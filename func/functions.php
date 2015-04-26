@@ -26,6 +26,25 @@ function checklogin($cookie=null){
 	}
 }
 
+function checkPassword($account,$password="") //return value: success: user, no such acct: -1, wrong pass: -2
+{
+	$db = PDO_prepare("SELECT * FROM `table:account` WHERE `account`=? OR `email`=?");
+	try{
+		$db->bindValue(1, $account, PDO::PARAM_STR);
+		$db->bindValue(2, $account, PDO::PARAM_STR);
+		$db->execute();
+		if($db->rowCount()<1)
+			return -1;
+		$data = $db->fetchAll()[0];
+		$real_pass = $data["password"];
+		if(crypt($password,$real_pass) !== $real_pass)
+			return -2;
+		return $data;
+	}catch(PDOException $e){
+		die("SQL ERROR: " . $e->getMessage());
+	}
+}
+
 function checkURL($url){
 	global $config;
 	$domain = parse_url($url,PHP_URL_HOST);
