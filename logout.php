@@ -15,8 +15,13 @@ if(isset($_COOKIE["login"])){
 	setcookie("login",null,-1,$config["session"]["cookie_path"],$config["session"]["domain"],false,true);
 }
 
-if(isset($_GET["continue"]) && checkURL($_GET["continue"])){
-	header("refresh: 0;url=".$_GET["continue"]);
+if(isset($_GET["continue"])){
+	if(checkURL($_GET["continue"])){
+		header("Location: ".$_GET["continue"]);
+	}else {
+		$E["msg"]="Blocked link. ";
+		require("template/blank.php");
+	}
 }else {
-	header("refresh: 0;url=index.php");
+	header("Location: index.php");
 }

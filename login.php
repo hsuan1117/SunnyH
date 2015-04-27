@@ -27,16 +27,21 @@ if(isset($_POST["account"]) && isset($_POST["password"])){
 		
 		header('refresh: 3;url=');
 	}else{
-		$E["msg"] = "login failed";
+		$E["msg"] = "Login failed";
 		require("template/login.php");
 	}
 }else if(($uid=checklogin())!==false){
-	if(isset($_GET["continue"]) && checkURL($_GET["continue"])){
-		header("Location:".$_GET["continue"]."?cookie=".$_COOKIE["login"]);
-	}else{
+	if(isset($_GET["continue"])){
+		if(checkURL($_GET["continue"])){
+			header("Location: ".$_GET["continue"]."?cookie=".$_COOKIE["login"]);
+		}else {
+			$E["msg"]="Blocked link. ";
+			require("template/blank.php");
+		}
+	}else {
 		header("Location:index.php");
 	}
-}else{
+}else {
 	require("template/login.php");
 }
 
