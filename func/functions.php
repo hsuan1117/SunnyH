@@ -48,6 +48,7 @@ function checkPassword($account,$password="") //return value: success: user, no 
 function checkURL($url){
 	global $config;
 	$domain = parse_url($url,PHP_URL_HOST);
+	if($domain===NULL)return true;
 	foreach ($config["site"]["available_domain"] as $d) {
 		if(preg_match($d,$domain)===1)
 			return true;
