@@ -2,7 +2,8 @@
 login all TFcis websites with one account
 
 ##install
-run `install/install.php` in terminal
+1. configure database setting in `config/config.php` (see `config/defualt_config.php` for example)
+2. run `install/install.php` in terminal
 ```
 cd install/
 php install.php
