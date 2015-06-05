@@ -11,7 +11,7 @@ if(!defined("IN_SYSTEM"))
 	Password: <input type="password" name="password"><br>
 	<input type="submit" value="login">
 </form>
-<a href="<?php echo getloginurl('http://www.tfcis.org/login/login.php'); ?>">login with facebook</a><br>
+<a href="<?php echo getloginurl($config["site"]["url"].'login.php'); ?>">login with facebook</a><br>
 <a href="signup.php">signup</a>
 </center>
 
