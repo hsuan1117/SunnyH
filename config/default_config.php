@@ -19,6 +19,12 @@ $config["session"]["cookie_domain"] = ".tfcis.org"; //Hint: If you want to set c
 
 # site
 $config["site"]["available_domain"] = ["/.*tfcis.org$/"];
+$config["site"]["url"] = "http://www.tfcis.org/login/";
 
+# facebook app
+$config["facebook"]["SDK_autoload_path"] = "facebook-php-sdk-v4-4.0-dev/autoload.php";
+$config["facebook"]["SDK_V4_SRC_DIR"] = "facebook-php-sdk-v4-4.0-dev/src/Facebook/";
+$config["facebook"]["appid"] = "YOUR_APP_ID";
+$config["facebook"]["appsecret"] = "YOUR_APP_SECRET";
 
 @include_once('config.php');

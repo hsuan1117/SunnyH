@@ -1,5 +1,7 @@
 <?php
+session_start();
 define("IN_SYSTEM",true);
+date_default_timezone_set("Asia/Taipei");
 require_once("config/default_config.php");
 require_once("func/sql.php");
 require_once("func/functions.php");

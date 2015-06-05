@@ -12,6 +12,20 @@ if(!defined("IN_SYSTEM"))
 	Confirm: <input type="password" name="password2"><br>
 	Nickname: <input type="text" name="nickname" value="<?=@$E["info"]["nickname"]?>"><br> 
 	E-mail: <input type="email" name="email" value="<?=@$E["info"]["email"]?>"><br>
+	Facebook: <input type="hidden" id="facebook" name="facebook" value="">
+	<?php
+		if(@$E["info"]["fbid"]==""){
+			?>
+				<a href="<?php echo getloginurl('http://www.tfcis.org/login/setting.php'); ?>">connect facebook</a>
+			<?php
+		}else {
+			echo @$E["info"]["fbid"];
+			?>
+				<button type="submit" onclick="facebook.value='unconnect';">unconnect</button>
+			<?php
+		}
+	?>
+	<br>
 	<input type="submit" value="edit">
 </form>
 </center>
