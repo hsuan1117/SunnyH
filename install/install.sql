@@ -10,6 +10,8 @@ CREATE TABLE `<?=$tablepre?>account` (
 	`password` varchar(34) NOT NULL,
 	`email` varchar(255) NOT NULL UNIQUE,
 	`nickname` text NOT NULL,
+	`fbid` varchar(15) NOT NULL DEFAULT '',
+	`fbtoken` text,
 	PRIMARY KEY (`id`)
 ) ENGINE=MyISAM CHARSET=<?=$charset?>;
 
