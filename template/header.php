@@ -31,7 +31,7 @@ if(!defined("IN_SYSTEM"))
 			</div>
 		</td>
 		<td height="25" valign="middle" bgcolor="#0000FF" style="text-align: right; color: #FFF;">
-			<?php if($E["login"]===true){ ?>
+			<?php if(@$E["login"]===true){ ?>
 				<?=$E["nick"]?>(<?=$E["acct"]?>)
 				<a href="logout.php?continue=index.php" style="color:#FFF">logout</a>
 			<?php }else{ ?>
