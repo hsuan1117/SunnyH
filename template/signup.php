@@ -5,15 +5,30 @@ if(!defined("IN_SYSTEM"))
 
 <?php require("header.php"); ?>
 
-<center>
+<h3>Signup</h3>
 <form method="POST">
-	Account: <input type="text" name="account" required value="<?=@$E["POST"]["account"]?>"><br>
-	Password: <input type="password" required name="password"><br>
-	Confirm: <input type="password" required name="password2"><br>
-	Nickname: <input type="text" name="nickname" required value="<?=@$E["POST"]["nickname"]?>"><br> 
-	E-mail: <input type="email" name="email" required value="<?=@$E["POST"]["email"]?>"><br>
-	<input type="submit" value="signup">
+	<div class="row uniform 50%">
+		<div class="12u 12u$(xsmall)">
+			<input type="text" name="account" required value="<?=@$E["POST"]["account"]?>" placeholder="Account" />
+		</div>
+		<div class="12u$ 12u$(xsmall)">
+			<input type="password" name="password" required placeholder="Password" />
+		</div>
+		<div class="12u$ 12u$(xsmall)">
+			<input type="password" name="password2" required placeholder="Confirm" />
+		</div>
+		<div class="12u$ 12u$(xsmall)">
+			<input type="text" name="nickname" required value="<?=@$E["POST"]["nickname"]?>" placeholder="Nickname" />
+		</div>
+		<div class="12u$ 12u$(xsmall)">
+			<input type="email" name="email" required value="<?=@$E["POST"]["email"]?>" placeholder="E-mail" />
+		</div>
+		<div class="12u$">
+			<ul class="actions">
+				<li><input type="submit" value="signup" class="special" /></li>
+			</ul>
+		</div>
+	</div>
 </form>
-</center>
 
 <?php require("footer.php"); ?>

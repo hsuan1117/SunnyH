@@ -8,39 +8,50 @@ if(!defined("IN_SYSTEM"))
 
 <head>
 	<meta charset="UTF-8">
-	<title>TFcis Login Integration System</title>
+	<title>TFcis Login</title>
+	
+	<!-- templated.co -->
+	<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/skel.min.js"></script>
+	<script src="js/skel-layers.min.js"></script>
+	<script src="js/init.js"></script>
+	<noscript>
+		<link rel="stylesheet" href="css/skel.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/style-xlarge.css" />
+	</noscript>
+	<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 </head>
-<body topmargin="0" leftmargin="0">
-	<table width="100%" border="0" cellspacing="0" cellpadding="0">
-	<tr>
-		<td width="100%" height="100" align="center" valign="middle" bgcolor="#F0F0F0" style="font-weight: bold;">
-			<span style="font-size: 36px;color: #999"><span style="color: #000;">TFcis</span> <span style="color: #000;">L</span>ogin <span style="color: #000;">I</span>ntegration <span style="color: #000;">S</span>ystem</span><br>
-			<span style="color: #999">台南一中資訊社整合登入系統</span>
-		</td>
-		<td bgcolor="#F0F0F0" style="text-align: right" colspan="2"><div id="headerimg" style="display:none;"><img src="http://www.tfcis.org/images/TFcisweb3_03.gif" height="100px"></div></td>
-		<script>if(document.body.clientWidth>=900)headerimg.style.display="";</script>
-	</tr>
-	</table>
 
-	<table width="100%" border="0" cellspacing="0" cellpadding="0">
-	<tr>
-		<td height="25" valign="middle" bgcolor="#0000FF" style="color: #FFF">
-			<div style="float:left;">
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href="./" style="color:#FFF" >Home</a>
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href="./setting.php" style="color:#FFF" >Setting</a>
-			</div>
-		</td>
-		<td height="25" valign="middle" bgcolor="#0000FF" style="text-align: right; color: #FFF;">
-			<?php if(@$E["login"]===true){ ?>
-				<?=$E["nick"]?>(<?=$E["acct"]?>)
-				<a href="logout.php?continue=index.php" style="color:#FFF">logout</a>
-			<?php }else{ ?>
-				<a href="login.php" style="color:#FFF">login</a>
-			<?php } ?>
-			&nbsp;&nbsp;
-		</td>
-	</tr>
-	</table>
-	<center>
-		<?=$E["msg"]?>
-	</center>
+<body>
+	<header id="header">
+		<a href="index.php">
+			<!--<h1>test</h1>-->
+			<h1 style="color:#999">TFcis <span style="color:#ffffff">Login</span> Integration System</h1>
+		</a>
+		<nav id="nav">
+			<ul>
+				<li><a href="index.php">Home</a></li>
+				<li><a href="setting.php">Setting</a></li>
+				
+				<?php if(@$E["login"]===true){ ?>
+					<li><?=$E["nick"]?>(<?=$E["acct"]?>)</li>
+					<li><a href="logout.php?continue=index.php" style="color:#FFF">logout</a></li>
+				<?php }else{ ?>
+					<li><a href="login.php" style="color:#FFF">login/signup</a></li>
+				<?php } ?>
+				
+			</ul>
+		</nav>
+	</header>
+	
+<?php if(!@$E['main']){ ?>
+	<section id="main" class="wrapper">
+		<div class="container">
+<?php } ?>
+	
+	<?php
+		if($E["msg"]!="")
+			echo "<blockquote>$E[msg]</blockquote>";
+	?>
