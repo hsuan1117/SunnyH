@@ -1,7 +1,6 @@
 <?php
 define('FACEBOOK_SDK_V4_SRC_DIR', $config["facebook"]["SDK_V4_SRC_DIR"]);
 require_once($config["facebook"]["SDK_autoload_path"]);
-include_once("config/config.php");
 use Facebook\FacebookSession;
 use Facebook\FacebookRequest;
 use Facebook\FacebookRequestException;
