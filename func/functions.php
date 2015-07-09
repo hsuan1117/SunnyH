@@ -18,7 +18,7 @@ function checklogin($cookie=null){
 			return $uid;
 		}else{
 			//delete cookie
-			setcookie("login",null,-1,$config["session"]["cookie_path"],$config["session"]["domain"],false,true);
+			setcookie("login",null,-1,$config["session"]["cookie_path"],$config["session"]["cookie_domain"],false,true);
 			return false;
 		}
 	}catch(PDOException $e){

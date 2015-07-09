@@ -12,7 +12,7 @@ if(isset($_COOKIE["login"])){
 		die("SQL ERROR: " . $e->getMessage());
 	}
 
-	setcookie("login",null,-1,$config["session"]["cookie_path"],$config["session"]["domain"],false,true);
+	setcookie("login",null,-1,$config["session"]["cookie_path"],$config["session"]["cookie_domain"],false,true);
 }
 
 if(isset($_GET["continue"])){
