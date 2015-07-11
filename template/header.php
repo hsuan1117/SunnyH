@@ -26,8 +26,7 @@ if(!defined("IN_SYSTEM"))
 
 <body>
 	<header id="header">
-		<a href="index.php">
-			<!--<h1>test</h1>-->
+		<a href="./">
 			<h1 style="color:#999">TFcis <span style="color:#ffffff">Login</span> Integration System</h1>
 		</a>
 		<nav id="nav">
