@@ -16,7 +16,7 @@ if(!defined("IN_SYSTEM"))
 	<?php
 		if(@$E["info"]["fbid"]==""){
 			?>
-				<a href="<?php echo getloginurl('http://www.tfcis.org/login/setting.php'); ?>">connect facebook</a>
+				<a href="<?php echo getloginurl($config["site"]["url"].'setting.php'); ?>">connect facebook</a>
 			<?php
 		}else {
 			echo @$E["info"]["fbid"];
