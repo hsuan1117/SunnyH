@@ -16,12 +16,12 @@ if(!defined("IN_SYSTEM"))
 	<?php
 		if(@$E["info"]["fbid"]==""){
 			?>
-				<a href="<?php echo getloginurl($config["site"]["url"].'setting.php'); ?>">connect facebook</a>
+				<input type="button" onclick="document.location='<?php echo getloginurl($config["site"]["url"].'setting.php'); ?>';" value="connect">
 			<?php
 		}else {
 			echo @$E["info"]["fbid"];
 			?>
-				<button type="submit" onclick="facebook.value='unconnect';">unconnect</button>
+				<input type="submit" onclick="facebook.value='unconnect';" value="unconnect">
 			<?php
 		}
 	?>
