@@ -59,8 +59,7 @@ if($uid===false){
 			}
 			$E["msg"].="E-mail changed. ";
 		}
-	}
-	if(@$_POST["facebook"]=="unconnect"){
+	}else if(@$_POST["facebook"]=="unconnect"){
 		$db = PDO_prepare("UPDATE `table:account` SET `fbid`='',`fbtoken`='' WHERE `id`=?");
 		try{
 			$db->bindValue(1,$uid,PDO::PARAM_INT);
@@ -68,6 +67,7 @@ if($uid===false){
 		}catch(PDOException $e){
 			die("SQL ERROR: " . $e->getMessage());
 		}
+		$E["msg"].="Facebook unconnected. ";
 	}else if(checkfblogin($session=getsession($config["site"]["url"]."setting.php"))){
 		$fbuser=(new FacebookRequest($session, 'GET', '/me?fields=id'))->execute()->getGraphObject()->asArray();
 		$db = PDO_prepare("UPDATE `table:account` SET `fbid`=:fbid,`fbtoken`=:fbtoken WHERE `id`=:id");
@@ -79,7 +79,7 @@ if($uid===false){
 		}catch(PDOException $e){
 			die("SQL ERROR: " . $e->getMessage());
 		}
-		header('Location: setting.php');
+		$E["msg"].="Facebook connected. ";
 	}
 }
 $db = PDO_prepare("SELECT * FROM `table:account` WHERE `id`=?");
