@@ -59,8 +59,7 @@ if($uid===false){
 			}
 			$E["msg"].="E-mail changed. ";
 		}
-	}
-	if(@$_POST["facebook"]=="unconnect"){
+	}else if(@$_POST["facebook"]=="unconnect"){
 		$db = PDO_prepare("UPDATE `table:account` SET `fbid`='',`fbtoken`='' WHERE `id`=?");
 		try{
 			$db->bindValue(1,$uid,PDO::PARAM_INT);
