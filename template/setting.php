@@ -12,7 +12,10 @@ if(!defined("IN_SYSTEM"))
 	Confirm: <input type="password" name="password2"><br>
 	Nickname: <input type="text" name="nickname" value="<?=@$E["info"]["nickname"]?>"><br> 
 	E-mail: <input type="email" name="email" value="<?=@$E["info"]["email"]?>"><br>
-	Facebook: <input type="hidden" id="facebook" name="facebook" value="">
+	<input type="submit" value="edit">
+</form>
+<form method="POST">
+    Facebook: <input type="hidden" id="facebook" name="facebook" value="unconnect">
 	<?php
 		if(@$E["info"]["fbid"]==""){
 			?>
@@ -21,12 +24,10 @@ if(!defined("IN_SYSTEM"))
 		}else {
 			echo @$E["info"]["fbid"];
 			?>
-				<input type="submit" onclick="facebook.value='unconnect';" value="unconnect">
+				<input type="submit" value="unconnect">
 			<?php
 		}
 	?>
-	<br>
-	<input type="submit" value="edit">
 </form>
 </center>
 
