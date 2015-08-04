@@ -4,7 +4,7 @@ class login_system{
 	
 	static $url = "http://www.tfcis.org/login/";
 	
-	public function status(){
+	public static function status(){
 		@session_start();
 		if(@$_GET["logout"]==true){
 			unset($_SESSION["user"]);
@@ -32,7 +32,7 @@ class login_system{
 		}
 	}
 	
-	private function geturl($page){
+	private static function geturl($page){
 		$current_url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
 		return self::$url . "$page.php?continue=" . urlencode($current_url);
 	}
