@@ -1,6 +1,7 @@
 <?php
 //return login userid
 function checklogin($cookie=null){
+	global $config;
 	if(is_null($cookie))
 		$cookie = @$_COOKIE["login"];
 	if(!isset($cookie))
