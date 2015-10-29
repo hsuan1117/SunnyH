@@ -31,6 +31,38 @@ class login_system{
 			return (object)array( "login"=>false, "data"=>null, "url"=>self::geturl("login") );;
 		}
 	}
+
+	public static function getinfobyaccount($uid){
+		$data = file_get_contents(self::$url."api/getinfo.php?account=".$uid);
+		$data = json_decode($data);
+		if($data->status === "success"){
+			return $data->result;
+		}else if($data->status === "error"){
+			if($data->result === "notfound"){
+				return false;
+			}else{
+				throw new exception("Login API returned an error status");
+			}
+		}else{
+			throw new exception("Unexpected API result");
+		}
+	}
+
+	public static function getinfobyid($uid){
+		$data = file_get_contents(self::$url."api/getinfo.php?uid=".$uid);
+		$data = json_decode($data);
+		if($data->status === "success"){
+			return $data->result;
+		}else if($data->status === "error"){
+			if($data->result === "notfound"){
+				// cookie not found
+			}else{
+				throw new exception("Login API returned an error status");
+			}
+		}else{
+			throw new exception("Unexpected API result");
+		}
+	}
 	
 	private static function geturl($page){
 		$current_url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
