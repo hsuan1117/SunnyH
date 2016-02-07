@@ -1,7 +1,6 @@
 <?php
 require_once("system.php");
-include_once("func/facebook.php");
-use Facebook\FacebookRequest;
+
 $uid=checklogin();
 if($uid===false){
 	header('Location: login.php?continue=setting.php');
@@ -59,27 +58,6 @@ if($uid===false){
 			}
 			$E["msg"].="E-mail changed. ";
 		}
-	}else if(@$_POST["facebook"]=="unconnect"){
-		$db = PDO_prepare("UPDATE `table:account` SET `fbid`='',`fbtoken`='' WHERE `id`=?");
-		try{
-			$db->bindValue(1,$uid,PDO::PARAM_INT);
-			$db->execute();
-		}catch(PDOException $e){
-			die("SQL ERROR: " . $e->getMessage());
-		}
-		$E["msg"].="Facebook unconnected. ";
-	}else if(checkfblogin($session=getsession($config["site"]["url"]."setting.php"))){
-		$fbuser=(new FacebookRequest($session, 'GET', '/me?fields=id'))->execute()->getGraphObject()->asArray();
-		$db = PDO_prepare("UPDATE `table:account` SET `fbid`=:fbid,`fbtoken`=:fbtoken WHERE `id`=:id");
-		try{
-			$db->bindValue("id",$uid,PDO::PARAM_INT);
-			$db->bindValue("fbid",$fbuser["id"],PDO::PARAM_STR);
-			$db->bindValue("fbtoken",$session->getToken(),PDO::PARAM_STR);
-			$db->execute();
-		}catch(PDOException $e){
-			die("SQL ERROR: " . $e->getMessage());
-		}
-		$E["msg"].="Facebook connected. ";
 	}
 }
 $db = PDO_prepare("SELECT * FROM `table:account` WHERE `id`=?");

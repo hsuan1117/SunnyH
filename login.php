@@ -1,7 +1,7 @@
 <?php
 require_once("system.php");
-include_once("func/facebook.php");
-use Facebook\FacebookRequest;
+
+$E["fblogin"]=true;
 if(isset($_POST["account"]) && isset($_POST["password"])){
 	$user = checkPassword($_POST["account"],$_POST["password"]);
 	if($user !== -1 && $user !== -2){
@@ -9,19 +9,6 @@ if(isset($_POST["account"]) && isset($_POST["password"])){
 		header('refresh: 3;url=');
 	}else{
 		$E["msg"] = "Login failed";
-		require("template/login.php");
-	}
-}else if(checkfblogin($session=getsession($config["site"]["url"]."login.php"))){
-	$fbuser=(new FacebookRequest($session, 'GET', '/me?fields=id'))->execute()->getGraphObject()->asArray();
-	$db = PDO_prepare("SELECT `id` FROM `table:account` WHERE `fbid`=?");
-	$db->bindValue(1, $fbuser["id"], PDO::PARAM_STR);
-	$db->execute();
-	if($db->rowCount()>0){
-		$user = $db->fetchAll()[0];
-		createCookie($user);
-		header('refresh: 3;url=index.php');
-	}else{
-		$E["msg"] = "This facebook account hasn't connect to any account.";
 		require("template/login.php");
 	}
 }else if(($uid=checklogin())!==false){
