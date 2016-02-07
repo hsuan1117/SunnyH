@@ -1,7 +1,6 @@
 <?php
 require_once("system.php");
 
-$E["fblogin"]=true;
 if(isset($_POST["account"]) && isset($_POST["password"])){
 	$user = checkPassword($_POST["account"],$_POST["password"]);
 	if($user !== -1 && $user !== -2){
