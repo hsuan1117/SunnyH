@@ -69,6 +69,16 @@ try{
 	$E["info"]["email"] = $data["email"];
 	$E["info"]["nickname"] = $data["nickname"];
 	$E["info"]["fbid"] = $data["fbid"];
+	$E["info"]["fbname"] = $data["fbname"];
+	require("func/facebook-php-sdk-v4/src/Facebook/autoload.php");
+	$fb = new Facebook\Facebook([
+		'app_id' => $config['facebook']['app_id'],
+		'app_secret' => $config['facebook']['app_secret'],
+		'default_graph_version' => 'v2.5',
+		]);
+	$helper = $fb->getRedirectLoginHelper();
+	$E["info"]["fbloginurl"] = $helper->getLoginUrl($config["site"]["url"]."connect.php?connect");
+
 }catch(PDOExsception $e){
 	die("SQL ERROR: " . $e->getMessage());
 }

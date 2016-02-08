@@ -1,13 +1,49 @@
 <?php
 require_once("system.php");
 
+$E['facebook']['app_id']=$config['facebook']['app_id'];
+
 if(isset($_POST["account"]) && isset($_POST["password"])){
 	$user = checkPassword($_POST["account"],$_POST["password"]);
 	if($user !== -1 && $user !== -2){
 		createCookie($user);
-		header('refresh: 3;url=');
+		header('refresh: 3;url=login.php?continue='.urlencode($_GET["continue"]));
 	}else{
-		$E["msg"] = "Login failed";
+		$E["msg"] = "Login failed.";
+		require("template/login.php");
+	}
+}else if(isset($_GET["fblogin"])){
+	require("func/facebook-php-sdk-v4/src/Facebook/autoload.php");
+	$fb = new Facebook\Facebook([
+		'app_id' => $config['facebook']['app_id'],
+		'app_secret' => $config['facebook']['app_secret'],
+		'default_graph_version' => 'v2.5',
+		]);
+	$helper = $fb->getJavaScriptHelper();
+	try {
+		$accessToken = $helper->getAccessToken();
+		if (! isset($accessToken)) {
+			$E["msg"] = "Facebook login failed.";
+			require("template/login.php");
+		} else {
+			$response = $fb->get('/me',$accessToken->getValue())->getDecodedBody();
+			$db = PDO_prepare("SELECT `id` FROM `table:account` WHERE `fbid`=:fbid");
+			$db->bindValue("fbid", $response["id"], PDO::PARAM_STR);
+			$db->execute();
+			if($db->rowCount()>0){
+				$user = $db->fetchAll()[0];
+				createCookie($user);
+				header('refresh: 3;url=login.php?continue='.urlencode($_GET["continue"]));
+			} else {
+				$E["msg"] = "This Facebook account didn't connect to any TFcis Login account.";
+				require("template/login.php");
+			}
+		}
+	} catch(Facebook\Exceptions\FacebookResponseException $e) {
+		$E["msg"] = "Facebook login failed.";
+		require("template/login.php");
+	} catch(Facebook\Exceptions\FacebookSDKException $e) {
+		$E["msg"] = "Facebook login failed.";
 		require("template/login.php");
 	}
 }else if(($uid=checklogin())!==false){
