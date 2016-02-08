@@ -21,4 +21,8 @@ $config["session"]["cookie_domain"] = ".tfcis.org"; //Hint: If you want to set c
 $config["site"]["available_domain"] = ["/.*tfcis.org$/"];
 $config["site"]["url"] = "http://www.tfcis.org/login/";
 
+# facebook app
+$config["facebook"]["app_id"] = "app_id";
+$config["facebook"]["app_secret"] = "app_secret";
+
 @include_once('config.php');
