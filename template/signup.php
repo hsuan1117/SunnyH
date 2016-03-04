@@ -21,6 +21,9 @@ if(!defined("IN_SYSTEM"))
 			<input type="text" name="nickname" required value="<?=@$E["POST"]["nickname"]?>" placeholder="Nickname" />
 		</div>
 		<div class="12u$ 12u$(xsmall)">
+			<input type="text" name="realname" required value="<?=@$E["POST"]["realname"]?>" placeholder="Realname" />
+		</div>
+		<div class="12u$ 12u$(xsmall)">
 			<input type="email" name="email" required value="<?=@$E["POST"]["email"]?>" placeholder="E-mail" />
 		</div>
 		<div class="12u$">

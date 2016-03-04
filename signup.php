@@ -19,7 +19,11 @@ if(isset($_POST["account"])){
 	}
 	if($_POST["nickname"]==""){
 		$signupfail=true;
-		$E["msg"].="Name is empty. ";
+		$E["msg"].="Nickname is empty. ";
+	}
+	if($_POST["realname"]==""){
+		$signupfail=true;
+		$E["msg"].="Realname is empty. ";
 	}
 	if($_POST["email"]==""){
 		$signupfail=true;
@@ -35,6 +39,7 @@ if(isset($_POST["account"])){
 				$db->bindValue("password", crypt($_POST["password"]));
 				$db->bindValue("email", $_POST["email"]);
 				$db->bindValue("nickname", $_POST["nickname"]);
+				$db->bindValue("realname", $_POST["realname"]);
 				$db->execute();
 			}catch(PDOException $e){
 				die("SQL ERROR: " . $e->getMessage());

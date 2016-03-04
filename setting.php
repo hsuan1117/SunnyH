@@ -14,6 +14,7 @@ if($uid===false){
 			$info = array();
 			$info["email"] = $data["email"];
 			$info["nickname"] = $data["nickname"];
+			$info["realname"] = $data["realname"];
 		}catch(PDOExsception $e){
 			die("SQL ERROR: " . $e->getMessage());
 		}
@@ -45,6 +46,19 @@ if($uid===false){
 			}
 			$E["msg"].="Nickname changed. ";
 		}
+		if($_POST["realname"]==""){
+			$E["msg"].="Realname is empty. ";
+		}else if($_POST["realname"]!=$info["realname"]){
+			try{
+				$db = PDO_prepare("UPDATE `table:account` SET `realname`=:realname WHERE `id`=:id");
+				$db->bindValue("realname", $_POST["realname"]);
+				$db->bindValue("id", $uid);
+				$db->execute();
+			}catch(PDOException $e){
+				die("SQL ERROR: " . $e->getMessage());
+			}
+			$E["msg"].="Realname changed. ";
+		}
 		if($_POST["email"]==""){
 			$E["msg"].="E-mail is empty. ";
 		}else if($_POST["email"]!=$info["email"]){
@@ -68,6 +82,7 @@ try{
 	$E["info"]["account"] = $data["account"];
 	$E["info"]["email"] = $data["email"];
 	$E["info"]["nickname"] = $data["nickname"];
+	$E["info"]["realname"] = $data["realname"];
 	$E["info"]["fbid"] = $data["fbid"];
 	$E["info"]["fbname"] = $data["fbname"];
 	require("func/facebook-php-sdk-v4/src/Facebook/autoload.php");

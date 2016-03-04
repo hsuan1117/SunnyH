@@ -12,6 +12,7 @@ if(!defined("IN_SYSTEM"))
 		<div class="4u 12u$(xsmall)"></div><div class="1u 12u$(xsmall)">Password:</div><div class="3u 12u$(xsmall)"><input type="password" name="password"></div><div class="4u$ 12u$(xsmall)"></div>
 		<div class="4u 12u$(xsmall)"></div><div class="1u 12u$(xsmall)">Confirm:</div><div class="3u 12u$(xsmall)"><input type="password" name="password2"></div><div class="4u$ 12u$(xsmall)"></div>
 		<div class="4u 12u$(xsmall)"></div><div class="1u 12u$(xsmall)">Nickname:</div><div class="3u 12u$(xsmall)"><input type="text" name="nickname" value="<?=@$E["info"]["nickname"]?>"></div><div class="4u$ 12u$(xsmall)"></div>
+		<div class="4u 12u$(xsmall)"></div><div class="1u 12u$(xsmall)">Realname:</div><div class="3u 12u$(xsmall)"><input type="text" name="realname" value="<?=@$E["info"]["realname"]?>"></div><div class="4u$ 12u$(xsmall)"></div>
 		<div class="4u 12u$(xsmall)"></div><div class="1u 12u$(xsmall)">E-mail:</div><div class="3u 12u$(xsmall)"><input type="email" name="email" value="<?=@$E["info"]["email"]?>"></div><div class="4u$ 12u$(xsmall)"></div>
 		<div class="4u 12u$(xsmall)"></div><div class="1u 12u$(xsmall)">Facebook:</div><div class="3u 12u$(xsmall)">
 			<?php
