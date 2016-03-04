@@ -24,6 +24,7 @@ if(isset($_GET["cookie"])){
 		$result["account"] = $data["account"];
 		$result["email"] = $data["email"];
 		$result["nickname"] = $data["nickname"];
+		$result["realname"] = $data["realname"];
 		make_json_result("success",$result);
 	}catch(PDOExsception $e){
 		die("SQL ERROR: " . $e->getMessage());
