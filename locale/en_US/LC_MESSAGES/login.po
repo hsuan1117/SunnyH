@@ -86,7 +86,7 @@ msgid "no_login"
 msgstr "Login first. "
 
 msgid "fb_connect_fail"
-msgstr "Login first. "
+msgstr "Facebook connect failed "
 
 msgid "fb_connect_ok"
 msgstr "Facebook connect succeed. "
