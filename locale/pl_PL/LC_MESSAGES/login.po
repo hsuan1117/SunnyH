@@ -1,0 +1,121 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pl_PL\n"
+"X-Generator: Poedit 1.8.7\n"
+
+# # template
+# header
+msgid "Home"
+msgstr "strona główna"
+
+msgid "Setting"
+msgstr "ustawienie"
+
+msgid "login"
+msgstr "zaloguj Się"
+
+msgid "signup"
+msgstr "zapisz się"
+
+msgid "logout"
+msgstr "wyloguj"
+
+# login
+# setting
+msgid "Account"
+msgstr "Konto"
+
+msgid "Password"
+msgstr "Hasło"
+
+msgid "Password_placeholder"
+msgstr "Przynajmniej 6 znaków."
+
+msgid "Confirm"
+msgstr "Potwierdzać"
+
+msgid "Confirm_placeholder"
+msgstr "Ponownie wprowadź hasło."
+
+msgid "Nickname"
+msgstr "Przezwisko"
+
+msgid "Nickname_placeholder"
+msgstr "Każdy wskaże cię od pseudonimu."
+
+msgid "Realname"
+msgstr "Prawdziwe imię"
+
+msgid "Realname_placeholder"
+msgstr "Wprowadź swoją prawdziwą chińską nazwę. Będziesz zablokowane ze względu na fałszywe nazwisko."
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Email_placeholder"
+msgstr "Wpisz swój adres e-mail, a otrzymasz pocztę."
+
+msgid "connect"
+msgstr "połączyć"
+
+msgid "disconnect"
+msgstr "rozłączyć się"
+
+msgid "edit"
+msgstr "edytować"
+
+# signup
+msgid "Signup"
+msgstr "Zapisz się"
+
+msgid "signup_Account_placeholder"
+msgstr "Między 3 a 32 liter albo cyfr numerycznych. nie mogą zostać zmienione."
+
+# # process
+# connect
+msgid "no_login"
+msgstr "Najpierw zalogować."
+
+msgid "fb_connect_fail"
+msgstr "Login first. "
+
+msgid "fb_connect_ok"
+msgstr "Facebook połączyć się niepowodzeniem."
+
+msgid "fb_disconnect_ok"
+msgstr "Facebook odłączyć się uda."
+
+# login
+msgid "login_fail"
+msgstr "Logowanie nie powiodło się."
+
+msgid "fb_login_fail"
+msgstr "Facebook logowanie nie powiodło się."
+
+msgid "fb_unconnect"
+msgstr "To konto Facebook nie będzie łączyć się z dowolnym TFcis Login kontem."
+
+msgid "block_link"
+msgstr "Zablokowane łącza."
+
+msgid "login_ok"
+msgstr "Zaloguj się uda."
+
+# setting
+msgid "password_diff"
+msgstr "Hasło nie pasuje."
+
+msgid "changed"
+msgstr "zmieniony"
+
+msgid "is empty."
+msgstr "jest puste."
