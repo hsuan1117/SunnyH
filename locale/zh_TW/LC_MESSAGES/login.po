@@ -29,6 +29,10 @@ msgstr "註冊"
 msgid "logout"
 msgstr "登出"
 
+# login
+msgid "Login"
+msgstr "登入"
+
 # setting
 msgid "Account"
 msgstr "帳戶"

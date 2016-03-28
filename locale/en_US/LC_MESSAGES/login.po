@@ -30,6 +30,9 @@ msgid "logout"
 msgstr "logout"
 
 # login
+msgid "Login"
+msgstr "Login"
+
 # setting
 msgid "Account"
 msgstr "Account"

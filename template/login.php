@@ -35,26 +35,26 @@ if(!defined("IN_SYSTEM"))
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
     js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js";
+    js.src = "//connect.facebook.net/<?php echo $E["locale"];?>/sdk.js";
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
 </script>
 <section>
 	
-	<h3>Login</h3>
+	<h3><?php echo _("Login");?></h3>
 	<form method="POST">
 		<div class="row uniform 50%">
 			<div class="12u 12u$(xsmall)">
-				<input type="text" name="account" placeholder="Account/E-mail" />
+				<input type="text" name="account" placeholder="<?php echo _("Account");?>/<?php echo _("Email");?>" />
 			</div>
 			<div class="12u$ 12u$(xsmall)">
-				<input type="password" name="password" placeholder="Password" />
+				<input type="password" name="password" placeholder="<?php echo _("Password");?>" />
 			</div>
 			<div class="12u$">
 				<ul class="actions">
-					<li><input type="submit" value="login" class="special" /></li>
+					<li><input type="submit" value="<?php echo _("login");?>" class="special" /></li>
 					<li><div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false" onlogin="checkLoginState();"></div></li>
-					<li><a href="signup.php" class="button alt">signup</a></li>
+					<li><a href="signup.php" class="button alt"><?php echo _("signup");?></a></li>
 				</ul>
 			</div>
 		</div>
