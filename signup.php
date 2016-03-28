@@ -34,7 +34,7 @@ if(isset($_POST["account"])){
 		$checkemail = checkPassword($_POST["email"]);
 		if($checkaccount === -1 && $checkemail === -1){
 			try{
-				$db = PDO_prepare("INSERT INTO `table:account` (`account`, `password`, `email`, `nickname`) VALUES (:account, :password, :email, :nickname)");
+				$db = PDO_prepare("INSERT INTO `table:account` (`account`, `password`, `email`, `nickname`, `realname`) VALUES (:account, :password, :email, :nickname, :realname)");
 				$db->bindValue("account", $_POST["account"]);
 				$db->bindValue("password", crypt($_POST["password"]));
 				$db->bindValue("email", $_POST["email"]);
