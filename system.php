@@ -19,6 +19,21 @@ if($uid!==false){
 	$data = $db->fetchAll()[0];
 	$E["nick"] = $data["nickname"];
 	$E["acct"] = $data["account"];
+	$E["locale"] = $data["locale"];
 }else {
 	$E["login"] = false;
 }
+
+if (isset($_GET["locale"])) {
+	$E["locale"] = $_GET["locale"];
+}
+
+if (!in_array($E["locale"], $config["locale"])) {
+	$E["locale"] = "en_US";
+}
+
+putenv("LANG=".$E["locale"]);
+setlocale(LC_ALL, $E["locale"]);
+bind_textdomain_codeset("login", "UTF-8");
+bindtextdomain("login", "locale");
+textdomain("login");

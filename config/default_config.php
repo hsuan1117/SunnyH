@@ -25,4 +25,7 @@ $config["site"]["url"] = "http://www.tfcis.org/login/";
 $config["facebook"]["app_id"] = "app_id";
 $config["facebook"]["app_secret"] = "app_secret";
 
+# allow locale list
+$config["locale"] = array("en_US", "zh_TW");
+
 @include_once('config.php');

@@ -9,7 +9,7 @@ if(isset($_POST["account"]) && isset($_POST["password"])){
 		createCookie($user);
 		header('refresh: 3;url=login.php?continue='.urlencode($_GET["continue"]));
 	}else{
-		$E["msg"] = "Login failed.";
+		$E["msg"] = _("login_fail");
 		require("template/login.php");
 	}
 }else if(isset($_GET["fblogin"])){
@@ -23,7 +23,7 @@ if(isset($_POST["account"]) && isset($_POST["password"])){
 	try {
 		$accessToken = $helper->getAccessToken();
 		if (! isset($accessToken)) {
-			$E["msg"] = "Facebook login failed.";
+			$E["msg"] = _("fb_login_fail");
 			require("template/login.php");
 		} else {
 			$response = $fb->get('/me',$accessToken->getValue())->getDecodedBody();
@@ -35,15 +35,15 @@ if(isset($_POST["account"]) && isset($_POST["password"])){
 				createCookie($user);
 				header('refresh: 3;url=login.php?continue='.urlencode($_GET["continue"]));
 			} else {
-				$E["msg"] = "This Facebook account didn't connect to any TFcis Login account.";
+				$E["msg"] = _("fb_unconnect");
 				require("template/login.php");
 			}
 		}
 	} catch(Facebook\Exceptions\FacebookResponseException $e) {
-		$E["msg"] = "Facebook login failed.";
+		$E["msg"] = _("fb_login_fail");
 		require("template/login.php");
 	} catch(Facebook\Exceptions\FacebookSDKException $e) {
-		$E["msg"] = "Facebook login failed.";
+		$E["msg"] = _("fb_login_fail");
 		require("template/login.php");
 	}
 }else if(($uid=checklogin())!==false){
@@ -51,7 +51,7 @@ if(isset($_POST["account"]) && isset($_POST["password"])){
 		if(checkURL($_GET["continue"])){
 			header("Location: ".$_GET["continue"]."?cookie=".$_COOKIE["login"]);
 		}else {
-			$E["msg"]="Blocked link. ";
+			$E["msg"]=_("block_link");
 			require("template/blank.php");
 		}
 	}else {
@@ -73,7 +73,7 @@ function randomHash($len)
 
 function createCookie($user){
 	global $config;
-	$E["msg"] = "Login succeed.";
+	$E["msg"] = _("login_ok");
 	require("template/blank.php");
 	$hash = randomHash(32);
 	if($config["session"]["keep_login"]===false)

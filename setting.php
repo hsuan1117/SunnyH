@@ -20,7 +20,7 @@ if($uid===false){
 		}
 		if(checkPassword($uid,$_POST["password"]) && $_POST["password"].$_POST["password2"]!=""){
 			if($_POST["password"]!=$_POST["password2"]){
-				$E["msg"].="Password isn't match. ";
+				$E["msg"].=_("password_diff");
 			}else {
 				try{
 					$db = PDO_prepare("UPDATE `table:account` SET `password`=:password WHERE `id`=:id");
@@ -30,11 +30,11 @@ if($uid===false){
 				}catch(PDOException $e){
 					die("SQL ERROR: " . $e->getMessage());
 				}
-				$E["msg"].="Password changed. ";
+				$E["msg"].=_("Password")." "._("changed")." ";
 			}
 		}
 		if($_POST["nickname"]==""){
-			$E["msg"].="Nickname is empty. ";
+			$E["msg"].=_("Nickname")." "._("is empty.")." ";
 		}else if($_POST["nickname"]!=$info["nickname"]){
 			try{
 				$db = PDO_prepare("UPDATE `table:account` SET `nickname`=:nickname WHERE `id`=:id");
@@ -44,10 +44,10 @@ if($uid===false){
 			}catch(PDOException $e){
 				die("SQL ERROR: " . $e->getMessage());
 			}
-			$E["msg"].="Nickname changed. ";
+			$E["msg"].=_("Nickname")." "._("changed")." ";
 		}
 		if($_POST["realname"]==""){
-			$E["msg"].="Realname is empty. ";
+			$E["msg"].=_("Realname")." "._("is empty.")." ";
 		}else if($_POST["realname"]!=$info["realname"]){
 			try{
 				$db = PDO_prepare("UPDATE `table:account` SET `realname`=:realname WHERE `id`=:id");
@@ -57,10 +57,10 @@ if($uid===false){
 			}catch(PDOException $e){
 				die("SQL ERROR: " . $e->getMessage());
 			}
-			$E["msg"].="Realname changed. ";
+			$E["msg"].=_("Realname")." "._("changed")." ";
 		}
 		if($_POST["email"]==""){
-			$E["msg"].="E-mail is empty. ";
+			$E["msg"].="E-mail "._("is empty.")." ";
 		}else if($_POST["email"]!=$info["email"]){
 			try{
 				$db = PDO_prepare("UPDATE `table:account` SET `email`=:email WHERE `id`=:id");
@@ -70,7 +70,7 @@ if($uid===false){
 			}catch(PDOException $e){
 				die("SQL ERROR: " . $e->getMessage());
 			}
-			$E["msg"].="E-mail changed. ";
+			$E["msg"].=_("Email")." "._("changed")." ";
 		}
 	}
 }

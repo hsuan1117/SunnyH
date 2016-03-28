@@ -2,7 +2,7 @@
 require_once("system.php");
 
 if(($uid=checklogin())===false){
-	$E["msg"] = "Login first.";
+	$E["msg"] = _("no_login");
 	require("template/login.php");
 	exit;
 }
@@ -18,20 +18,20 @@ if(isset($_GET["connect"])){
 	try {
 		$accessToken = $helper->getAccessToken();
 	} catch(Facebook\Exceptions\FacebookResponseException $e) {
-		$E["msg"] = "Facebook connect failed.";
+		$E["msg"] = _("fb_connect_fail");
 		require("template/blank.php");
 		exit;
 	} catch(Facebook\Exceptions\FacebookSDKException $e) {
-		$E["msg"] = "Facebook connect failed.";
+		$E["msg"] = _("fb_connect_fail");
 		require("template/blank.php");
 		exit;
 	}
 	if (! isset($accessToken)) {
 		if ($helper->getError()) {
-			$E["msg"] = "Facebook connect failed.";
+			$E["msg"] = _("fb_connect_fail");
 			require("template/blank.php");
 		} else {
-			$E["msg"] = "Facebook connect failed.";
+			$E["msg"] = _("fb_connect_fail");
 			require("template/blank.php");
 		}
 		exit;
@@ -42,17 +42,17 @@ if(isset($_GET["connect"])){
 	$db->bindValue("fbname", $response["name"], PDO::PARAM_STR);
 	$db->bindValue("uid", $uid, PDO::PARAM_STR);
 	$t=$db->execute();
-	$E["msg"] = "Facebook connect succeed.";
+	$E["msg"] = _("fb_connect_ok");
 	require("template/blank.php");
 	header('refresh: 3;url=setting.php');
 }else if(isset($_GET["disconnect"])){
 	$db = PDO_prepare("UPDATE `table:account` SET `fbid`='',`fbname`='' WHERE `id`=:uid");
 	$db->bindValue("uid", $uid, PDO::PARAM_STR);
 	$db->execute();
-	$E["msg"] = "Facebook disconnect succeed.";
+	$E["msg"] = _("fb_disconnect_ok");
 	require("template/blank.php");
 	header('refresh: 3;url=setting.php');
 }else {
-	$E["msg"] = "Facebook connect failed.";
+	$E["msg"] = _("fb_connect_fail");
 	require("template/blank.php");
 }

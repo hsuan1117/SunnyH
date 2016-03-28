@@ -32,16 +32,17 @@ if(!defined("IN_SYSTEM"))
 		</a>
 		<nav id="nav">
 			<ul>
-				<li><a href="index.php">Home</a></li>
-				<li><a href="setting.php">Setting</a></li>
+				<li><a href="index.php"><?php echo _("Home");?></a></li>
+				<li><a href="setting.php"><?php echo _("Setting");?></a></li>
 				
 				<?php if(@$E["login"]===true){ ?>
 					<li><?=$E["nick"]?>(<?=$E["acct"]?>)</li>
-					<li><a href="logout.php?continue=index.php" style="color:#FFF">logout</a></li>
+					<li><a href="logout.php?continue=index.php" style="color:#FFF"><?php echo _("logout");?></a></li>
 				<?php }else{ ?>
-					<li><a href="login.php" style="color:#FFF">login/signup</a></li>
+					<li><a href="login.php" style="color:#FFF"><?php echo _("login");?>/<?php echo _("signup");?></a></li>
 				<?php } ?>
-				
+
+				<li><?php echo $E["locale"];?></li>
 			</ul>
 		</nav>
 	</header>

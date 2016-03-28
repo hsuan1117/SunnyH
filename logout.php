@@ -19,7 +19,7 @@ if(isset($_GET["continue"])){
 	if(checkURL($_GET["continue"])){
 		header("Location: ".$_GET["continue"]);
 	}else {
-		$E["msg"]="Blocked link. ";
+		$E["msg"]=_("block_link");
 		require("template/blank.php");
 	}
 }else {

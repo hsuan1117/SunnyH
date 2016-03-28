@@ -5,29 +5,29 @@ $E["POST"]=$_POST;
 if(isset($_POST["account"])){
 	if($_POST["account"]==""){
 		$signupfail=true;
-		$E["msg"].="Account is empty. ";
+		$E["msg"].=_("Account")." "._("is empty.")." ";
 	}
 	if($_POST["password"]==""){
 		$signupfail=true;
-		$E["msg"].="Password is empty. ";
+		$E["msg"].=_("Password")." "._("is empty.")." ";
 	}else if($_POST["password2"]==""){
 		$signupfail=true;
-		$E["msg"].="Confirm is empty. ";
+		$E["msg"].=_("Confirm")." "._("is empty.")." ";
 	}else if($_POST["password"]!==$_POST["password2"]){
 		$signupfail=true;
-		$E["msg"].="Password isn't match. ";
+		$E["msg"].=_("password_diff")." ";
 	}
 	if($_POST["nickname"]==""){
 		$signupfail=true;
-		$E["msg"].="Nickname is empty. ";
+		$E["msg"].=_("Nickname")." "._("is empty.")." ";
 	}
 	if($_POST["realname"]==""){
 		$signupfail=true;
-		$E["msg"].="Realname is empty. ";
+		$E["msg"].=_("Realname")." "._("is empty.")." ";
 	}
 	if($_POST["email"]==""){
 		$signupfail=true;
-		$E["msg"].="E-mail is empty. ";
+		$E["msg"].=_("Email")." "._("is empty.")." ";
 	}
 	if(!$signupfail){
 		$checkaccount = checkPassword($_POST["account"]);
