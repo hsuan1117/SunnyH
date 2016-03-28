@@ -53,8 +53,8 @@ if(!defined("IN_SYSTEM"))
 			<div class="12u$">
 				<ul class="actions">
 					<li><input type="submit" value="<?php echo _("login");?>" class="special" /></li>
-					<li><div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false" onlogin="checkLoginState();"></div></li>
 					<li><a href="signup.php" class="button alt"><?php echo _("signup");?></a></li>
+          <li><div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false" onlogin="checkLoginState();"></div></li>
 				</ul>
 			</div>
 		</div>
