@@ -39,7 +39,7 @@ if (!in_array($E["locale"], $config["locale"])) {
 }
 
 putenv("LANG=".$E["locale"]);
-setlocale(LC_ALL, $E["locale"]);
+setlocale(LC_ALL, $E["locale"].".utf8");
 bind_textdomain_codeset("login", "UTF-8");
 bindtextdomain("login", "locale");
 textdomain("login");
