@@ -10,6 +10,10 @@ require_once("func/functions.php");
 $E = array();
 $E["msg"] = "";
 
+if (isset($_COOKIE["locale"]) && in_array($_COOKIE["locale"], $config["locale"])) {
+	$E["locale"] = $_COOKIE["locale"];
+}
+
 $uid = checklogin();
 if($uid!==false){
 	$E["login"] = true;
@@ -19,12 +23,14 @@ if($uid!==false){
 	$data = $db->fetchAll()[0];
 	$E["nick"] = $data["nickname"];
 	$E["acct"] = $data["account"];
-	$E["locale"] = $data["locale"];
+	if (in_array($data["locale"], $config["locale"])) {
+		$E["locale"] = $data["locale"];
+	}
 }else {
 	$E["login"] = false;
 }
 
-if (isset($_GET["locale"])) {
+if (isset($_GET["locale"]) && in_array($_GET["locale"], $config["locale"])) {
 	$E["locale"] = $_GET["locale"];
 }
 
