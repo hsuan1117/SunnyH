@@ -41,8 +41,11 @@ if(!defined("IN_SYSTEM"))
 				<?php }else{ ?>
 					<li><a href="login.php" style="color:#FFF"><?php echo _("login");?>/<?php echo _("signup");?></a></li>
 				<?php } ?>
-
-				<li><?php echo $E["locale"];?></li>
+				<li><select id="locale" onchange="document.location='http://'+location.host+location.pathname+'?locale='+this.value;">
+					<?php foreach ($config["locale"] as $locale) {
+						echo '<option value="'.$locale.'" style="background-color: #000;" '.($E["locale"]==$locale?"selected":"").'>'.$locale.'</option>';
+					}?>
+				</select></li>
 			</ul>
 		</nav>
 	</header>
