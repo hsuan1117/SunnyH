@@ -72,7 +72,7 @@ function randomHash($len)
 }
 
 function createCookie($user){
-	global $config;
+	global $config, $E;
 	$E["msg"] = _("login_ok");
 	require("template/blank.php");
 	$hash = randomHash(32);
