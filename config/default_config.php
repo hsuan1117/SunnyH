@@ -26,6 +26,10 @@ $config["facebook"]["app_id"] = "app_id";
 $config["facebook"]["app_secret"] = "app_secret";
 
 # allow locale list
-$config["locale"] = array("en_US", "zh_TW");
+$config["locale"] = array(
+	"en_US",
+	"pl_PL",
+	"zh_TW"
+);
 
 @include_once('config.php');

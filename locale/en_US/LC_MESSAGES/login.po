@@ -86,36 +86,36 @@ msgstr "Between 3 and 32 alphabetic characters or numerical digits. Cannot be ch
 # # process
 # connect
 msgid "no_login"
-msgstr "Login first. "
+msgstr "Login first."
 
 msgid "fb_connect_fail"
-msgstr "Facebook connect failed "
+msgstr "Facebook connect failed."
 
 msgid "fb_connect_ok"
-msgstr "Facebook connect succeed. "
+msgstr "Facebook connect succeed."
 
 msgid "fb_disconnect_ok"
-msgstr "Facebook disconnect succeed. "
+msgstr "Facebook disconnect succeed."
 
 # login
 msgid "login_fail"
-msgstr "Login failed. "
+msgstr "Login failed."
 
 msgid "fb_login_fail"
-msgstr "Facebook login failed. "
+msgstr "Facebook login failed."
 
 msgid "fb_unconnect"
-msgstr "This Facebook account didn't connect to any TFcis Login account. "
+msgstr "This Facebook account didn't connect to any TFcis Login account."
 
 msgid "block_link"
-msgstr "Blocked link. "
+msgstr "Blocked link."
 
 msgid "login_ok"
-msgstr "Login succeed. "
+msgstr "Login succeed."
 
 # setting
 msgid "password_diff"
-msgstr "Password isn't match. "
+msgstr "Password isn't match."
 
 msgid "changed"
 msgstr "changed"

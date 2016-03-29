@@ -89,7 +89,7 @@ msgid "no_login"
 msgstr "Najpierw zalogować."
 
 msgid "fb_connect_fail"
-msgstr "Login first. "
+msgstr "Facebook Connect nie powiodło się."
 
 msgid "fb_connect_ok"
 msgstr "Facebook połączyć się niepowodzeniem."
