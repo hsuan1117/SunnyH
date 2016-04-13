@@ -7,7 +7,7 @@ if(isset($_POST["account"]) && isset($_POST["password"])){
 	$user = checkPassword($_POST["account"],$_POST["password"]);
 	if($user !== -1 && $user !== -2){
 		createCookie($user);
-		header('refresh: 3;url=login.php?continue='.urlencode($_GET["continue"]));
+		header("Refresh: 3");
 	}else{
 		$E["msg"] = _("login_fail");
 		require("template/login.php");
