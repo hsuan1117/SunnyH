@@ -1,5 +1,7 @@
 <?php
 require_once("system.php");
+require_once("func/cURL-HTTP-function/curl.php");
+
 $signupfail=false;
 $E["POST"]=$_POST;
 if(isset($_POST["account"])){
@@ -28,6 +30,11 @@ if(isset($_POST["account"])){
 	if($_POST["email"]==""){
 		$signupfail=true;
 		$E["msg"].=_("Email")." "._("is empty.")." ";
+	}
+	$response=cURL_HTTP_Request('https://www.google.com/recaptcha/api/siteverify',array('secret'=>$config['reCAPTCHA']['secret_key'],'response'=>$_POST['g-recaptcha-response']));
+	if(!json_decode($response->html)->success){
+		$signupfail=true;
+		$E["msg"] = _("reCAPTCHA_fail");
 	}
 	if(!$signupfail){
 		$checkaccount = checkPassword($_POST["account"]);

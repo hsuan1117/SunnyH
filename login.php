@@ -1,15 +1,22 @@
 <?php
 require_once("system.php");
+require_once("func/cURL-HTTP-function/curl.php");
 
 $E['facebook']['app_id']=$config['facebook']['app_id'];
 
 if(isset($_POST["account"]) && isset($_POST["password"])){
-	$user = checkPassword($_POST["account"],$_POST["password"]);
-	if($user !== -1 && $user !== -2){
-		createCookie($user);
-		header("Refresh: 3");
-	}else{
-		$E["msg"] = _("login_fail");
+	$response=cURL_HTTP_Request('https://www.google.com/recaptcha/api/siteverify',array('secret'=>$config['reCAPTCHA']['secret_key'],'response'=>$_POST['g-recaptcha-response']));
+	if(json_decode($response->html)->success){
+		$user = checkPassword($_POST["account"],$_POST["password"]);
+		if($user !== -1 && $user !== -2){
+			createCookie($user);
+			header("Refresh: 3");
+		}else{
+			$E["msg"] = _("login_fail");
+			require("template/login.php");
+		}
+	} else {
+		$E["msg"] = _("reCAPTCHA_fail");
 		require("template/login.php");
 	}
 }else if(isset($_GET["fblogin"])){

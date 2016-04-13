@@ -5,6 +5,7 @@ if(!defined("IN_SYSTEM"))
 
 <?php require("header.php"); ?>
 
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <script>
   function statusChangeCallback(response) {
     if (response.status === 'connected') {
@@ -49,6 +50,9 @@ if(!defined("IN_SYSTEM"))
 			</div>
 			<div class="12u$ 12u$(xsmall)">
 				<input type="password" name="password" placeholder="<?php echo _("Password");?>" />
+			</div>
+			<div class="12u$ 12u$(xsmall)">
+				<div class="g-recaptcha" data-sitekey="<?php echo $config['reCAPTCHA']['site_key']; ?>"></div>
 			</div>
 			<div class="12u$">
 				<ul class="actions">
