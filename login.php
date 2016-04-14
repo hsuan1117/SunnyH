@@ -56,7 +56,7 @@ if(isset($_POST["account"]) && isset($_POST["password"])){
 }else if(($uid=checklogin())!==false){
 	if(isset($_GET["continue"])){
 		if(checkURL($_GET["continue"])){
-			header("Location: ".$_GET["continue"]."?cookie=".$_COOKIE["login"]);
+			header("Location: ".urldecode($_GET["continue"])."?cookie=".$_COOKIE["login"]);
 		}else {
 			$E["msg"]=_("block_link");
 			require("template/blank.php");

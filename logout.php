@@ -17,7 +17,7 @@ if(isset($_COOKIE["login"])){
 
 if(isset($_GET["continue"])){
 	if(checkURL($_GET["continue"])){
-		header("Location: ".$_GET["continue"]);
+		header("Location: ".urldecode($_GET["continue"]));
 	}else {
 		$E["msg"]=_("block_link");
 		require("template/blank.php");
