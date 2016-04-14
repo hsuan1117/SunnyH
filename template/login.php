@@ -46,10 +46,10 @@ if(!defined("IN_SYSTEM"))
 	<form method="POST">
 		<div class="row uniform 50%">
 			<div class="12u 12u$(xsmall)">
-				<input type="text" name="account" placeholder="<?php echo _("Account");?>/<?php echo _("Email");?>" />
+				<input type="text" name="account" placeholder="<?php echo _("Account");?>/<?php echo _("Email");?>" required />
 			</div>
 			<div class="12u$ 12u$(xsmall)">
-				<input type="password" name="password" placeholder="<?php echo _("Password");?>" />
+				<input type="password" name="password" placeholder="<?php echo _("Password");?>" required />
 			</div>
 			<div class="12u$ 12u$(xsmall)">
 				<div class="g-recaptcha" data-sitekey="<?php echo $config['reCAPTCHA']['site_key']; ?>"></div>
