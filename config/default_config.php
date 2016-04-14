@@ -19,7 +19,7 @@ $config["session"]["cookie_domain"] = ".tfcis.org"; //Hint: If you want to set c
 
 # site
 $config["site"]["available_domain"] = ["/.*tfcis.org$/"];
-$config["site"]["url"] = "http://www.tfcis.org/login/";
+$config["site"]["url"] = "http://login.tfcis.org/";
 
 # facebook app
 $config["facebook"]["app_id"] = "app_id";
