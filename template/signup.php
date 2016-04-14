@@ -5,7 +5,7 @@ if(!defined("IN_SYSTEM"))
 
 <?php require("header.php"); ?>
 
-<script src='https://www.google.com/recaptcha/api.js'></script>
+<script src='https://www.google.com/recaptcha/api.js?hl=<?php echo $E["locale"]; ?>'></script>
 <center>
 <h3><?php echo _("Signup");?></h3>
 <form method="POST">
