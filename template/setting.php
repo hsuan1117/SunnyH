@@ -24,7 +24,13 @@ if(!defined("IN_SYSTEM"))
 			}
 			?>
 		</div><div class="2u$ 12u$(xsmall)"></div>
-		<div class="2u 12u$(xsmall)"></div><div class="1u 12u$(xsmall)"></div><div class="7u 12u$(xsmall)"><input type="submit" value="<?php echo _("edit");?>"></div><div class="2u$ 12u$(xsmall)"></div>
+		<div class="2u 12u$(xsmall)"></div><div class="1u 12u$(xsmall)"></div>
+		<div class="7u 12u$(xsmall)">
+			<ul class="actions">
+				<li><input type="submit" value="<?php echo _("edit");?>"></li>
+			</ul>
+		</div>
+		<div class="2u$ 12u$(xsmall)"></div>
 	</div>
 </form>
 </center>

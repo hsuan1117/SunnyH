@@ -17,7 +17,13 @@ if(!defined("IN_SYSTEM"))
 		<div class="2u 12u$(xsmall)"></div><div class="1u 12u$(xsmall)"><?php echo _("Realname");?>:</div><div class="7u 12u$(xsmall)"><input type="text" name="realname" required value="<?=@$E["POST"]["realname"]?>" placeholder="<?php echo _("Realname_placeholder");?>"></div><div class="2u$ 12u$(xsmall)"></div>
 		<div class="2u 12u$(xsmall)"></div><div class="1u 12u$(xsmall)"><?php echo _("Email");?>:</div><div class="7u 12u$(xsmall)"><input type="email" name="email" required value="<?=@$E["POST"]["email"]?>" placeholder="<?php echo _("Email_placeholder");?>"></div><div class="2u$ 12u$(xsmall)"></div>
 		<div class="2u 12u$(xsmall)"></div><div class="1u 12u$(xsmall)"></div><div class="7u 12u$(xsmall)"><div class="g-recaptcha" data-sitekey="<?php echo $config['reCAPTCHA']['site_key']; ?>"></div></div><div class="2u$ 12u$(xsmall)"></div>
-		<div class="2u 12u$(xsmall)"></div><div class="1u 12u$(xsmall)"></div><div class="7u 12u$(xsmall)"><input type="submit" value="<?php echo _("signup");?>" class="special"></div><div class="2u$ 12u$(xsmall)"></div>
+		<div class="2u 12u$(xsmall)"></div><div class="1u 12u$(xsmall)"></div>
+		<div class="7u 12u$(xsmall)">
+			<ul class="actions">
+				<li><input type="submit" value="<?php echo _("signup");?>" class="special"></li>
+			</ul>
+		</div>
+		<div class="2u$ 12u$(xsmall)"></div>
 	</div>
 </form>
 </center>
