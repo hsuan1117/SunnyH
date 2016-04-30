@@ -27,8 +27,11 @@ $config["facebook"]["app_secret"] = "app_secret";
 
 # allow locale list
 $config["locale"] = array(
+	"de_DE",
 	"en_US",
+	"ja_JP",
 	"pl_PL",
+	"ru_RU",
 	"zh_TW"
 );
 
