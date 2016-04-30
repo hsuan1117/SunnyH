@@ -1,0 +1,124 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru_RU\n"
+"X-Generator: Poedit 1.8.7\n"
+
+# # template
+# header
+msgid "Home"
+msgstr "Главная страница"
+
+msgid "Setting"
+msgstr "Настройки"
+
+msgid "login"
+msgstr "вход"
+
+msgid "signup"
+msgstr "Зарегистрируйтесь"
+
+msgid "logout"
+msgstr "выйти"
+
+# login
+msgid "Login"
+msgstr "Вход"
+
+# setting
+msgid "Account"
+msgstr "Учетная запись"
+
+msgid "Password"
+msgstr "Пароль"
+
+msgid "Password_placeholder"
+msgstr "По крайней мере 6 символов."
+
+msgid "Confirm"
+msgstr "подтвердить"
+
+msgid "Confirm_placeholder"
+msgstr "Повторно введите пароль."
+
+msgid "Nickname"
+msgstr "кличка"
+
+msgid "Nickname_placeholder"
+msgstr "Каждый будет идентифицировать Вас от Вашего ника."
+
+msgid "Realname"
+msgstr "Настоящее имя"
+
+msgid "Realname_placeholder"
+msgstr "Введите свое настоящее китайское имя. Вы будете заблокированы из-за поддельного имени."
+
+msgid "Email"
+msgstr "Эл Адрес"
+
+msgid "Email_placeholder"
+msgstr "Введите адрес электронной почты, и вы можете получить почту."
+
+msgid "connect"
+msgstr "соединять"
+
+msgid "disconnect"
+msgstr "отключить"
+
+msgid "edit"
+msgstr "редактировать"
+
+# signup
+msgid "Signup"
+msgstr "Зарегистрироваться"
+
+msgid "signup_Account_placeholder"
+msgstr "Между 3 и 32 букв или числовых цифр. Не может быть изменен."
+
+# # process
+# connect
+msgid "no_login"
+msgstr "Вход в первую очередь."
+
+msgid "fb_connect_fail"
+msgstr "Facebook соединять не удалось."
+
+msgid "fb_connect_ok"
+msgstr "Facebook подключиться успеха."
+
+msgid "fb_disconnect_ok"
+msgstr "Facebook разъединение успеха."
+
+# login
+msgid "login_fail"
+msgstr "Ошибка входа."
+
+msgid "fb_login_fail"
+msgstr "Facebook Войти не удалось."
+
+msgid "fb_unconnect"
+msgstr "Эта учетная запись Facebook не будет подключаться к любой TFcis Login учетной записи."
+
+msgid "block_link"
+msgstr "Заблокированные ссылка."
+
+msgid "login_ok"
+msgstr "Вход успеха."
+
+# setting
+msgid "password_diff"
+msgstr "Пароль не совпадает."
+
+msgid "changed"
+msgstr "изменен"
+
+msgid "is empty."
+msgstr "пусто."

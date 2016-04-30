@@ -1,0 +1,124 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de_DE\n"
+"X-Generator: Poedit 1.8.7\n"
+
+# # template
+# header
+msgid "Home"
+msgstr "Startseite"
+
+msgid "Setting"
+msgstr "Einstellung"
+
+msgid "login"
+msgstr "anmeldung"
+
+msgid "signup"
+msgstr "registrieren"
+
+msgid "logout"
+msgstr "ausloggen"
+
+# login
+msgid "Login"
+msgstr "Anmeldung"
+
+# setting
+msgid "Account"
+msgstr "Konto"
+
+msgid "Password"
+msgstr "Passwort"
+
+msgid "Password_placeholder"
+msgstr "Mindestens 6 Zeichen."
+
+msgid "Confirm"
+msgstr "Bestätigen"
+
+msgid "Confirm_placeholder"
+msgstr "Geben Sie erneut Ihr Passwort ein."
+
+msgid "Nickname"
+msgstr "Spitzname"
+
+msgid "Nickname_placeholder"
+msgstr "Jeder wird Sie von Ihrem Spitznamen identifizieren."
+
+msgid "Realname"
+msgstr "Echter Name"
+
+msgid "Realname_placeholder"
+msgstr "Geben Sie Ihren echten chinesischen Namen. Sie werden wegen falschen Namen blockiert werden."
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Email_placeholder"
+msgstr "Geben Sie einfach Ihre E-Mail-Adresse, und Sie können die E-Mail erhalten."
+
+msgid "connect"
+msgstr "verbinden"
+
+msgid "disconnect"
+msgstr "trennen"
+
+msgid "edit"
+msgstr "bearbeiten"
+
+# signup
+msgid "Signup"
+msgstr "Registrieren"
+
+msgid "signup_Account_placeholder"
+msgstr "Zwischen 3 und 32 Buchstaben oder Ziffern. Kann nicht geändert werden."
+
+# # process
+# connect
+msgid "no_login"
+msgstr "Zuerst Anmelden."
+
+msgid "fb_connect_fail"
+msgstr "Facebook connect ist fehlgeschlagen."
+
+msgid "fb_connect_ok"
+msgstr "Facebook connect erfolgreich zu sein."
+
+msgid "fb_disconnect_ok"
+msgstr "Facebook disconnect erfolgreich zu sein."
+
+# login
+msgid "login_fail"
+msgstr "Anmeldung fehlgeschlagen."
+
+msgid "fb_login_fail"
+msgstr "Facebook anmeldung fehlgeschlagen."
+
+msgid "fb_unconnect"
+msgstr "Dieses Facebook Konto kann keine Verbindung zu einem TFcis Login Konto."
+
+msgid "block_link"
+msgstr "Blockierte Link."
+
+msgid "login_ok"
+msgstr "Anmeldung erfolgreich zu sein."
+
+# setting
+msgid "password_diff"
+msgstr "Das Passwort ist nicht überein."
+
+msgid "changed"
+msgstr "geändert"
+
+msgid "is empty."
+msgstr "ist leer."

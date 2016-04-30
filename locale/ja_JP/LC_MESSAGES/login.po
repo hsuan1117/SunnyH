@@ -1,0 +1,124 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7\n"
+"Last-Translator: \n"
+"Language: ja_JP\n"
+
+# # template
+# header
+msgid "Home"
+msgstr "ホームページ"
+
+msgid "Setting"
+msgstr "設定"
+
+msgid "login"
+msgstr "ログイン"
+
+msgid "signup"
+msgstr "サインアップ"
+
+msgid "logout"
+msgstr "ログアウト"
+
+# login
+msgid "Login"
+msgstr "ログイン"
+
+# setting
+msgid "Account"
+msgstr "アカウント"
+
+msgid "Password"
+msgstr "パスワード"
+
+msgid "Password_placeholder"
+msgstr "少なくとも6文字"
+
+msgid "Confirm"
+msgstr "確認"
+
+msgid "Confirm_placeholder"
+msgstr "パスワードを再入力します"
+
+msgid "Nickname"
+msgstr "ニックネーム"
+
+msgid "Nickname_placeholder"
+msgstr "誰もがあなたのニックネームからあなたを識別します"
+
+msgid "Realname"
+msgstr "本名"
+
+msgid "Realname_placeholder"
+msgstr "あなたの本当の中国の名前を入力します。あなたがために偽の名前でブロックされます"
+
+msgid "Email"
+msgstr "Eメール"
+
+msgid "Email_placeholder"
+msgstr "あなたのメールアドレスを入力して、あなたがメールを受信することができます"
+
+msgid "connect"
+msgstr "接続します"
+
+msgid "disconnect"
+msgstr "切断"
+
+msgid "edit"
+msgstr "修正"
+
+# signup
+msgid "Signup"
+msgstr "サインアップ"
+
+msgid "signup_Account_placeholder"
+msgstr "英字や数字3〜32。変更することはできません"
+
+# # process
+# connect
+msgid "no_login"
+msgstr "ログインしてください"
+
+msgid "fb_connect_fail"
+msgstr "Facebookの接続が失敗。"
+
+msgid "fb_connect_ok"
+msgstr "Facebookの接続が成功。"
+
+msgid "fb_disconnect_ok"
+msgstr "Facebookの切断が成功。"
+
+# login
+msgid "login_fail"
+msgstr "ログイン失敗。"
+
+msgid "fb_login_fail"
+msgstr "Facebookのログインに失敗しました。"
+
+msgid "fb_unconnect"
+msgstr "このFacebookのアカウントがTFcis Loginアカウントに接続できませんでした。"
+
+msgid "block_link"
+msgstr "ブロックされたリンク。"
+
+msgid "login_ok"
+msgstr "ログイン成功。"
+
+# setting
+msgid "password_diff"
+msgstr "パスワードが一致しません。"
+
+msgid "changed"
+msgstr "変更されました"
+
+msgid "is empty."
+msgstr "空です。"
