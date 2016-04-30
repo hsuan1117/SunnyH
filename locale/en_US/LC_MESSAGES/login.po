@@ -81,7 +81,7 @@ msgid "Signup"
 msgstr "Signup"
 
 msgid "signup_Account_placeholder"
-msgstr "Between 3 and 32 alphabetic characters or numerical digits. Cannot be changed."
+msgstr "Between 3 and 32 letters or digits (A-Za-z0-9). Begin with a letter. Cannot be changed."
 
 # # process
 # connect

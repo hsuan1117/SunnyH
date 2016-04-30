@@ -81,7 +81,7 @@ msgid "Signup"
 msgstr "サインアップ"
 
 msgid "signup_Account_placeholder"
-msgstr "英字や数字3〜32。変更することはできません"
+msgstr "英字や数字3〜32。英字始まります。変更することはできません"
 
 # # process
 # connect

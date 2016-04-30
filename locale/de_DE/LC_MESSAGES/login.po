@@ -81,7 +81,7 @@ msgid "Signup"
 msgstr "Registrieren"
 
 msgid "signup_Account_placeholder"
-msgstr "Zwischen 3 und 32 Buchstaben oder Ziffern. Kann nicht geändert werden."
+msgstr "Zwischen 3 und 32 Buchstaben oder Ziffern. Beginnen Sie mit einem Buchstaben. Kann nicht geändert werden."
 
 # # process
 # connect

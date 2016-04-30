@@ -81,7 +81,7 @@ msgid "Signup"
 msgstr "註冊"
 
 msgid "signup_Account_placeholder"
-msgstr "3至32個字，只能使用大小英文或數字，永久不能更改"
+msgstr "3至32個英數(A-Za-z0-9)，以英文字開頭，永久不能更改"
 
 # # process
 # connect

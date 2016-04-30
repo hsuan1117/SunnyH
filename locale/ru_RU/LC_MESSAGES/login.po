@@ -81,7 +81,7 @@ msgid "Signup"
 msgstr "Зарегистрироваться"
 
 msgid "signup_Account_placeholder"
-msgstr "Между 3 и 32 букв или числовых цифр. Не может быть изменен."
+msgstr "Между 3 и 32 букв или числовых цифр. Начните с письмом. Не может быть изменен."
 
 # # process
 # connect
