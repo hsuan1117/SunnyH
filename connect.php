@@ -37,6 +37,14 @@ if(isset($_GET["connect"])){
 		exit;
 	}
 	$response = $fb->get('/me',$accessToken->getValue())->getDecodedBody();
+	$db = PDO_prepare("SELECT * FROM `table:account` WHERE `fbid` =:fbid");
+	$db->bindValue("fbid", $response["id"], PDO::PARAM_STR);
+	$db->execute();
+	if($db->rowCount()>0){
+		$E["msg"] = _("fb_already_connect");
+		require("template/blank.php");
+		exit;
+	}
 	$db = PDO_prepare("UPDATE `table:account` SET `fbid`=:fbid,`fbname`=:fbname WHERE `id`=:uid");
 	$db->bindValue("fbid", $response["id"], PDO::PARAM_STR);
 	$db->bindValue("fbname", $response["name"], PDO::PARAM_STR);
