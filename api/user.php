@@ -12,7 +12,8 @@ if(isset($_GET["cookie"])){
 		}
 		$uid = $db->fetch()["id"];
 	}catch(PDOExsception $e){
-		die("SQL ERROR: " . $e->getMessage());
+		make_json_result("error",$e->getMessage());
+		die();
 	}
 	$db = PDO_prepare("SELECT * FROM `table:account` WHERE `id`=?");
 	try{
@@ -27,7 +28,8 @@ if(isset($_GET["cookie"])){
 		$result["realname"] = $data["realname"];
 		make_json_result("success",$result);
 	}catch(PDOExsception $e){
-		die("SQL ERROR: " . $e->getMessage());
+		make_json_result("error",$e->getMessage());
+		die();
 	}
 }else{
 	make_json_result("error","need variable: cookie");
