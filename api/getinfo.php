@@ -44,5 +44,5 @@ if(isset($_GET["account"])){
 		die();
 	}
 }else{
-	make_json_result("error","need variable: cookie");
+	make_json_result("error","missing parameters");
 }
