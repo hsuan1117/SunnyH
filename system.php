@@ -34,8 +34,9 @@ if($uid!==false){
 if (isset($_GET["locale"]) && in_array($_GET["locale"], $config["locale"])) {
 	$E["locale"] = $_GET["locale"];
 	if ($E["login"] && $E["locale"] != $data["locale"]) {
-		$db = PDO_prepare("UPDATE `table:account` SET `locale`='".$E["locale"]."' WHERE `id`=:id");
+		$db = PDO_prepare("UPDATE `table:account` SET `locale`=:locale WHERE `id`=:id");
 		$db->bindValue("id", $uid, PDO::PARAM_INT);
+		$db->bindValue("locale", $E["locale"]);
 		$db->execute();
 	}
 }
