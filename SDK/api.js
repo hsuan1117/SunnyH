@@ -4,7 +4,9 @@ class Sunny {
         fetch(this.endpoint+method).then(res=>res.json()).then(callback)
     }
     constructor(endpoint){
-        this.endpoint = endpoint || "https://yiarashi.com/user7/";
+        if(endpoint&&endpoint[endpoint.length-1]=="/")endpoint.substr(0, endpoint.length-1);
+        this.endpoint = endpoint || "https://yiarashi.com/user7/login/api";
+        
         
         
     }
