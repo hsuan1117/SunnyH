@@ -1,7 +1,9 @@
 <?php
 /* SunnyH 1.0
- * 
  * License: GPLv3 License
+ * 
+ * Fork from TFcis/login
+ * 
  */
 require_once("../system.php");
 
