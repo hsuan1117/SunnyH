@@ -1,10 +1,8 @@
 <?php
-$isCLI = ( php_sapi_name() == 'cli' );
-if(!$isCLI)
-{
-    die("Please run me from the console - not from a web-browser!");
-}
-
+/* SunnyH 1.0
+ * 
+ * License: GPLv3 License
+ */
 require_once("../system.php");
 
 $dbconf = $config["DB"];
