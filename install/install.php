@@ -3,7 +3,7 @@
  * License: GPLv3 License
  * 
  * Fork from TFcis/login
- * 
+ * License: ?
  */
 require_once("../system.php");
 
